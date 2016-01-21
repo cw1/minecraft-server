@@ -8,11 +8,10 @@ RUN DEBIAN_FRONTEND=noninteractive \
     apt-get install -y openjdk-7-jre-headless wget
 
 RUN mkdir -p /minecraft/data && \
+    chmod ugo+rwx /minecraft /minecraft/data && \
     cd /minecraft && \
-    wget http://www.minecraft.net/download/minecraft_server.jar
-
-RUN chmod ugo+rx minecraft_server.jar && \
-    chmod ugo+rwx /minecraft /minecraft/data
+    wget -O minecraft_server.jar http://www.minecraft.net/download/minecraft_server.jar && \
+    chmod ugo+rx minecraft_server.jar
 
 WORKDIR /minecraft/data
 
