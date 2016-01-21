@@ -8,5 +8,5 @@ docker pull cw1900/minecraft-server
 ```
 and:
 ```
-docke run -name "cool_name" -d -p 25565:25565 -v /minecraft-server-data:/minecraft cw1900/minecraft-server
+docke run -name "cool_name" -d -p 25565:25565 -v /minecraft-server-data:/minecraft/data cw1900/minecraft-server
 ```
