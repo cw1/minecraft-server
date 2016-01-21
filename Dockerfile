@@ -7,9 +7,9 @@ RUN DEBIAN_FRONTEND=noninteractive \
 RUN DEBIAN_FRONTEND=noninteractive \
     apt-get install -y openjdk-7-jre-headless wget
 
-RUN mkdir -p /minecraft \
+RUN mkdir -p /minecraft/data \
     cd /minecraft \
     wget http://www.minecraft.net/download/minecraft_server.jar
 
-WORKDIR /minecraft
-CMD /usr/bin/java -Xmx1024M -Xms1024M -jar minecraft_server.jar nogui
+WORKDIR /minecraft/data
+CMD /usr/bin/java -Xmx1024M -Xms1024M -jar /minecraft/minecraft_server.jar nogui
