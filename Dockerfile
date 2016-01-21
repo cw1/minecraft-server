@@ -12,4 +12,4 @@ RUN mkdir -p /minecraft \
     wget http://www.minecraft.net/download/minecraft_server.jar
 
 WORKDIR /minecraft
-CMD["/usr/bin/java -Xmx1024M -Xms1024M -jar minecraft_server.jar nogui"]
+CMD /usr/bin/java -Xmx1024M -Xms1024M -jar minecraft_server.jar nogui
